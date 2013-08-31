@@ -7,8 +7,14 @@ class VendingMachine
 
 
   def insert(money)
-    return @stock.pop unless @stock.empty?
+    unless @stock.empty?
+      money = money - 100
 
-    money
+      return @stock.pop if money == 0
+
+      return [@stock.pop, money]
+
+    end
+   money
   end
 end

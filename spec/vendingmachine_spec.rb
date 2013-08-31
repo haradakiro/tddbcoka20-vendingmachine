@@ -9,6 +9,10 @@ describe VendingMachine do
     vm.insert(100).should eq(:coke)
   end
 
+  it '500円入れるとコーラとおつり400円が出てくる' do
+    vm.insert(500).should eq([:coke,400]);
+  end
+
   it '在庫が空になった後は返金する' do
     # ５回買うと在庫がなくなります。
     5.times {vm.insert(100)}
