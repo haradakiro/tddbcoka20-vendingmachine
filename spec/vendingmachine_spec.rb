@@ -18,8 +18,6 @@ describe VendingMachine do
     vm.insert(500).should eq(500);
   end
 
-
-
   it '在庫が空になった後は返金する' do
     # ５回買うと在庫がなくなります。
     5.times {vm.insert(100)}
