@@ -13,6 +13,13 @@ describe VendingMachine do
     vm.insert(500).should eq([:coke,400]);
   end
 
+  it '500円入れてもおつりの在庫がなければコーラがあっても返金する' do
+    2.times {vm.insert(500)}
+    vm.insert(500).should eq(500);
+  end
+
+
+
   it '在庫が空になった後は返金する' do
     # ５回買うと在庫がなくなります。
     5.times {vm.insert(100)}
